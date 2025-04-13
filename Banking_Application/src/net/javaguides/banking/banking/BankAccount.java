@@ -45,12 +45,12 @@ public class BankAccount {
         if (verifyPassword(inputPassword)) {
             if (amount > 0) {
                 balance += amount;
-                System.out.println("✅ Amount deposited successfully. Current Balance: " + balance+" For the Account Holder :"+ accountHolder);
+                System.out.println("Amount deposited successfully. Current Balance: " + balance+" For the Account Holder :"+ accountHolder);
             } else {
-                System.out.println("❌ Invalid amount! Please enter a positive number.");
+                System.out.println("Invalid amount! Please enter a positive number.");
             }
         } else {
-            System.out.println("❌ Incorrect password! Deposit failed.");
+            System.out.println(" Incorrect password! Deposit failed.");
         }
     }
 
@@ -58,15 +58,15 @@ public class BankAccount {
     public void withdraw(double amount, String inputPassword) {
         if (verifyPassword(inputPassword)) {
             if (amount <= 0) {
-                System.out.println("❌ Invalid amount! Please enter a positive number.");
+                System.out.println("Invalid amount! Please enter a positive number.");
             } else if (amount > balance) {
-                System.out.println("❌ Insufficient balance! Transaction failed.");
+                System.out.println("Insufficient balance! Transaction failed.");
             } else {
                 balance -= amount;
-                System.out.println("✅ Amount withdrawn successfully. Remaining Balance: " + balance+" For the Account Holder :"+ accountHolder);
+                System.out.println("Amount withdrawn successfully. Remaining Balance: " + balance+" For the Account Holder :"+ accountHolder);
             }
         } else {
-            System.out.println("❌ Incorrect password! Withdrawal failed.");
+            System.out.println("Incorrect password! Withdrawal failed.");
         }
     }
 
@@ -76,18 +76,18 @@ public class BankAccount {
             if (amount > 0 && amount <= balance) {
                 this.withdraw(amount, inputPassword);
                 otherAccount.balance += amount;
-                System.out.println("✅ Amount transferred successfully! New Balance: " + this.balance);
+                System.out.println("Amount transferred successfully! New Balance: " + this.balance);
             } else {
-                System.out.println("❌ Insufficient balance or invalid amount! Transfer failed.");
+                System.out.println(" Insufficient balance or invalid amount! Transfer failed.");
             }
         } else {
-            System.out.println("❌ Incorrect password! Transfer failed.");
+            System.out.println("Incorrect password! Transfer failed.");
         }
     }
 
     // Display Account Details
     public void displayAccountDetails() {
-        System.out.println("📄 Account Number: " + accountNumber + ", Account Holder: " + accountHolder + ", Balance: " + balance);
+        System.out.println(" Account Number: " + accountNumber + ", Account Holder: " + accountHolder + ", Balance: " + balance);
     }
 
     // Getters and Setters
